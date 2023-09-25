@@ -2,10 +2,16 @@ import { useState } from "react";
 
 export default function App() {
   return (
-    <div>
+    <div className="page">
+      <Header />
       <Counter />
+      <Footer />
     </div>
   );
+}
+
+function Header() {
+  return <h1 className="header">Day Calculator</h1>;
 }
 
 function Counter() {
@@ -16,7 +22,7 @@ function Counter() {
   date.setDate(date.getDate() + count);
 
   return (
-    <div>
+    <div className="body">
       <div className="container">
         <button onClick={() => setStep((c) => c - 1)}>-</button>
         <span>Step: {step}</span>
@@ -39,4 +45,8 @@ function Counter() {
       </div>
     </div>
   );
+}
+
+function Footer() {
+  return <div className="footer"></div>;
 }
